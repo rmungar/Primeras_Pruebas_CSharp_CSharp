@@ -4,13 +4,12 @@ namespace ConsoleApp1;
 
 public interface IItem
 {
-    int amAlmunt;
     
     public void Apply(Character character) {}
 
     public int GetAmount()
     {
-        this;
+        return 0;
     }
 
 
