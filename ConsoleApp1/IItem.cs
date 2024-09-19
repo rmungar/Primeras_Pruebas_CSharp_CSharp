@@ -4,13 +4,23 @@ namespace ConsoleApp1;
 
 public interface IItem
 {
-    public void Apply(Character character)
+    int amAlmunt;
+    
+    public void Apply(Character character) {}
+
+    public int GetAmount()
     {
-        character._inventory.Add(this);
+        this;
     }
 
-    public void ToString()
+
+    public Perks? GetPerk()
     {
-        Console.WriteLine(base.ToString());
+        return null;
+    }
+
+    public string ToString()
+    {
+        return "";
     }
 }

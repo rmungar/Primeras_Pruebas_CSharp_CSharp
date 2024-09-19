@@ -2,8 +2,38 @@ namespace ConsoleApp1;
 
 public abstract class Protection : IItem
 {
-    public string name;
-    public int armor;
-    public Perks perk;
+    private string _name;
+    private int _armor;
+    private Perks? _perk;
     
+    
+    public string GetName()
+    {
+        return _name;
+    }
+    
+    public int GetAmount()
+    {
+        return _armor;
+    }
+
+    public Perks? GetPerk()
+    {
+        return _perk ?? null;
+    }
+
+
+    public void Apply(Character character)
+    {
+        character._inventory.Add(this);
+    }
+
+    public override string ToString()
+    {
+        if (_perk == null)
+        {
+            return _name + " - " + _armor + " armor points" + " - " + "No Perk" ;
+        }
+        return _name + " - " + _armor + " armor points" + " - " + "Perk: " + _perk;
+    }
 }
