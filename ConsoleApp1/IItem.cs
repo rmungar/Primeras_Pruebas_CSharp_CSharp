@@ -5,9 +5,12 @@ namespace ConsoleApp1;
 public interface IItem
 {
     
-    public void Apply(Character character) {}
+    public void Apply(Character character)
+    {
+        
+    }
 
-    public int GetAmount()
+    public double GetAmount()
     {
         return 0;
     }
@@ -18,8 +21,5 @@ public interface IItem
         return null;
     }
 
-    public string ToString()
-    {
-        return "";
-    }
+    
 }

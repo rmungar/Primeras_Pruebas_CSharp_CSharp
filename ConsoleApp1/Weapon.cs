@@ -31,8 +31,9 @@ public abstract class Weapon : IItem
     {
         if (_perk == null)
         {
-            return _name + " - " + _damage + " damage points" + " - " + "No Perk" ;
+            return GetName() + " - " + GetAmount() + " damage points" + " - " + "No Perk" ;
         }
-        return _name + " - " + _damage + " damage points" + " - " + "Perk: " + _perk;
+        return GetName() + " - " + GetAmount() + " damage points" + " - " + "Perk: " + GetPerk();
+        
     }
 }

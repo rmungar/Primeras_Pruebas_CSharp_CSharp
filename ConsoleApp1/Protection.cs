@@ -32,8 +32,8 @@ public abstract class Protection : IItem
     {
         if (_perk == null)
         {
-            return _name + " - " + _armor + " armor points" + " - " + "No Perk" ;
+            return GetName() + " - " + GetAmount() + " armor points" + " - " + "No Perk" ;
         }
-        return _name + " - " + _armor + " armor points" + " - " + "Perk: " + _perk;
+        return GetName() + " - " + GetAmount() + " armor points" + " - " + "Perk: " + GetPerk();
     }
 }

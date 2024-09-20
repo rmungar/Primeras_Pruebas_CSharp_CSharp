@@ -3,22 +3,22 @@ namespace ConsoleApp1;
 public class ValuesManager
 {
 
-    public double GetTotalDamage(Character character)
+    public static double GetTotalDamage(Character character)
     {
         double characterTotalDamage = character.GetBaseDamage();
         foreach (var item in character._inventory)
         {
-            if (item is Weapon)
+            if (item is Weapon weapon)
             {
-                double additiveDamage = 0.0;
-                if (item.GetPerk() == Perks.FIRE_EFFECT)
+                double additiveDamage;
+                if (weapon.GetPerk() == Perks.FIRE_EFFECT)
                 {
-                    additiveDamage = item.GetAmount() + (item.GetAmount() * 0.1);
+                    additiveDamage = (weapon.GetAmount() + (weapon.GetAmount() * 0.1))!;
                     characterTotalDamage += additiveDamage;
                 }
-                if (item.GetPerk() == Perks.TTA)
+                if (weapon.GetPerk() == Perks.TTA)
                 {
-                    additiveDamage = item.GetAmount() + (item.GetAmount() * 0.5);
+                    additiveDamage = (weapon.GetAmount() + (weapon.GetAmount() * 0.5))!;
                     characterTotalDamage += additiveDamage;
                 }
             }
@@ -28,17 +28,16 @@ public class ValuesManager
 
 //--------------------------------------------------------------------------------------------------------------------//
     
-    public double GetTotalDefense(Character character)
+    public static double GetTotalDefense(Character character)
     {
         double characterTotalDefense = character.GetBaseArmor();
         foreach (var item in character._inventory)
         {
-            if (item is Armor)
+            if (item is Protection protection)
             {
-                double additiveArmor = 0.0;
-                if (item.GetPerk() == Perks.GUARD)
+                if (protection.GetPerk() == Perks.GUARD)
                 {
-                    additiveArmor = item.GetAmount() + (item.GetAmount() * 0.5);
+                    var additiveArmor = (protection.GetAmount() + (protection.GetAmount() * 0.5))!;
                     characterTotalDefense += additiveArmor;
                 }
             }
@@ -48,26 +47,21 @@ public class ValuesManager
     
 //--------------------------------------------------------------------------------------------------------------------//
 
-    public double GetTotalHealing(int baseHealing, Character character)
+    public static double GetTotalHealing(int baseHealing, Character character)
     {
         double characterTotalHealing = baseHealing;
         foreach (var item in character._inventory)
         {
-            if (item is Armor)
+            if (item is Armor armor)
             {
-                double additiveHealing = 0.0;
-                if (item.GetPerk() == Perks.HEALING)
+                if (armor.GetPerk() == Perks.HEALING)
                 {
-                    additiveHealing = (characterTotalHealing * 0.15);
+                    var additiveHealing = (characterTotalHealing * 0.15);
                     characterTotalHealing += additiveHealing;
                 }
             }
         }
         return characterTotalHealing;
     }
-    
-//--------------------------------------------------------------------------------------------------------------------//
-
-
     
 }

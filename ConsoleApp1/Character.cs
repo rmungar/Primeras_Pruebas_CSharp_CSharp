@@ -37,20 +37,20 @@ public class Character {
 
     public double Attack()
     {
-        ValuesManager valuesManager = new ValuesManager();
-        return valuesManager.GetTotalDamage(this);
+        var valuesManager = new ValuesManager();
+        return ValuesManager.GetTotalDamage(this);
     }
     
     public double Defense()
     {
-        ValuesManager valuesManager = new ValuesManager();
-        return valuesManager.GetTotalDefense(this);
+        var valuesManager = new ValuesManager();
+        return ValuesManager.GetTotalDefense(this);
     }
     
     public double Heal(int amount)
     {
-        ValuesManager valuesManager = new ValuesManager();
-        var toHeal = valuesManager.GetTotalHealing(amount, this);
+        var valuesManager = new ValuesManager();
+        var toHeal = ValuesManager.GetTotalHealing(amount, this);
         var healed = 0.0;
         if (toHeal >= _maxHitPoints)
         {
@@ -76,8 +76,8 @@ public class Character {
     
     public double RecieveDamage(int damage)
     {
-        ValuesManager valuesManager = new ValuesManager();
-        var characterDefense = valuesManager.GetTotalDefense(this);
+        var valuesManager = new ValuesManager();
+        var characterDefense = ValuesManager.GetTotalDefense(this);
         if (characterDefense <= damage)
         {
          _currentHp -= (damage - characterDefense);
@@ -89,6 +89,9 @@ public class Character {
 
     public void ShowInventory()
     {
+        Console.WriteLine();
+        Console.WriteLine("-- INVENTORY --");
+        Console.WriteLine();
         foreach (var item in _inventory)
         {
             Console.WriteLine(item.ToString());
