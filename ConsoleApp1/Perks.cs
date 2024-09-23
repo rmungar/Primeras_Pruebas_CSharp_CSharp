@@ -2,8 +2,8 @@ namespace ConsoleApp1;
 
 public enum Perks
 {
-    GUARD,
-    TTA,
-    FIRE_EFFECT,
-    HEALING
+    GUARD = 0,
+    TTA = 1,
+    FIRE_EFFECT = 2,
+    HEALING = 3
 }

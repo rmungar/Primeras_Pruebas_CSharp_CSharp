@@ -7,9 +7,11 @@ public class Character {
     private int _baseArmor;
     private int _baseDamage;
     public List<IItem> _inventory = [];
-
+    
     public Character(string name, int maxHitPoints = 100, int baseArmor = 0, int baseDamage = 10)
-    {
+    {   
+        
+        // Comprobaciones de los valores ingresados en el construcutor.
         _name = name;
         _maxHitPoints = _maxHitPoints < 0 ? 100 : maxHitPoints;
         _baseArmor = _baseArmor < 0 ? 0 : baseArmor;
@@ -18,22 +20,34 @@ public class Character {
     }
 
 
+// Devuelve el nombre del personaje
+    
     public string GetName()
     {
         return _name;
     }
     
+//--------------------------------------------------------------------------------------------------------------------//    
     
+// Devuelve el daño base del personaje
+
     public int GetBaseDamage()
     {
         return _baseDamage;
     }
+
+//--------------------------------------------------------------------------------------------------------------------//
+    
+// Devuelve la armadura base del personaje
 
     public int GetBaseArmor()
     {
         return _baseArmor; 
     }
 
+//--------------------------------------------------------------------------------------------------------------------//
+
+// Hace atacar al personaje, devuelve el ataque total de esste.
 
     public double Attack()
     {
@@ -41,12 +55,20 @@ public class Character {
         return ValuesManager.GetTotalDamage(this);
     }
     
+//--------------------------------------------------------------------------------------------------------------------//    
+    
+// Hace defender al personaje, devuelve la defensa total de este.
+
     public double Defense()
     {
         var valuesManager = new ValuesManager();
         return ValuesManager.GetTotalDefense(this);
     }
-    
+  
+//--------------------------------------------------------------------------------------------------------------------//
+
+// Después de calcular la curación total, comprueba los valores y cura al personaje en función de dichas comprobaciones.
+
     public double Heal(int amount)
     {
         var valuesManager = new ValuesManager();
@@ -73,7 +95,10 @@ public class Character {
         return healed;
     }
     
+//--------------------------------------------------------------------------------------------------------------------//    
     
+// Modifica la vida actual del personaje en función del valor del parámetro.
+
     public double RecieveDamage(int damage)
     {
         var valuesManager = new ValuesManager();
@@ -86,6 +111,10 @@ public class Character {
 
         return 0.0;
     }
+
+//--------------------------------------------------------------------------------------------------------------------//    
+    
+// Muestra por pantalla el inventario del personaje
 
     public void ShowInventory()
     {
