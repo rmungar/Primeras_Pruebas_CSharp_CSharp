@@ -20,9 +20,13 @@ public class ValuesManager
                     additiveDamage = (weapon.GetAmount() + (weapon.GetAmount() * 0.1))!;
                     characterTotalDamage += additiveDamage;
                 }
-                if (weapon.GetPerk() == Perks.TTA) {
+                else if (weapon.GetPerk() == Perks.TTA) {
                     additiveDamage = (weapon.GetAmount() + (weapon.GetAmount() * 0.5))!;
                     characterTotalDamage += additiveDamage;
+                }
+                else
+                {
+                    characterTotalDamage += weapon.GetAmount();
                 }
             }
         }
@@ -41,11 +45,18 @@ public class ValuesManager
         double characterTotalDefense = character.GetBaseArmor();
         foreach (var item in character._inventory)
         {
-            if (item.GetPerk() == Perks.GUARD)
+            if (item is Protection protection)
             {
-                var additiveArmor = (item.GetAmount() + (item.GetAmount() * 0.5))!;
-                characterTotalDefense += additiveArmor;
+                if (protection.GetPerk() == Perks.GUARD)
+                {
+                    characterTotalDefense += (protection.GetAmount() + (protection.GetAmount() * 0.5))!;;
+                }
+                else
+                {
+                    characterTotalDefense += protection.GetAmount();
+                }
             }
+            
         }
         return characterTotalDefense;
     }
@@ -71,5 +82,9 @@ public class ValuesManager
         }
         return characterTotalHealing;
     }
+    
+    
+    
+    
     
 }

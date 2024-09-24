@@ -5,7 +5,13 @@ public abstract class Weapon : IItem
     private string _name;
     private int _damage;
     private Perks? _perk;
-
+    
+    public Weapon(string name, int damage, Perks? perk)
+    {
+        _name = name;
+        _damage = damage;
+        _perk = perk;
+    }
     
     public string GetName()
     {

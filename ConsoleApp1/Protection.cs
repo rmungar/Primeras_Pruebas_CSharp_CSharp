@@ -5,7 +5,13 @@ public abstract class Protection : IItem
     private string _name;
     private int _armor;
     private Perks? _perk;
-    
+
+    public Protection(string name, int armor, Perks? perk)
+    {
+        _name = name;
+        _armor = armor;
+        _perk = perk;
+    }
     
     public string GetName()
     {

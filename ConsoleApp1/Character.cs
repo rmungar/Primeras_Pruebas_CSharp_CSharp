@@ -51,7 +51,6 @@ public class Character {
 
     public double Attack()
     {
-        var valuesManager = new ValuesManager();
         return ValuesManager.GetTotalDamage(this);
     }
     
@@ -61,7 +60,6 @@ public class Character {
 
     public double Defense()
     {
-        var valuesManager = new ValuesManager();
         return ValuesManager.GetTotalDefense(this);
     }
   
@@ -71,7 +69,6 @@ public class Character {
 
     public double Heal(int amount)
     {
-        var valuesManager = new ValuesManager();
         var toHeal = ValuesManager.GetTotalHealing(amount, this);
         var healed = 0.0;
         if (toHeal >= _maxHitPoints)
@@ -101,7 +98,6 @@ public class Character {
 
     public double RecieveDamage(int damage)
     {
-        var valuesManager = new ValuesManager();
         var characterDefense = ValuesManager.GetTotalDefense(this);
         if (characterDefense <= damage)
         {

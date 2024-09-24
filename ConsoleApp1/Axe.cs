@@ -1,6 +1,6 @@
 namespace ConsoleApp1;
 
-public class Axe(string name, int damage, Perks? perk) : Weapon
+public class Axe(string name, int damage, Perks? perk) : Weapon(name, damage, perk)
 {
     private string _name = name;
     private int _damage = damage;

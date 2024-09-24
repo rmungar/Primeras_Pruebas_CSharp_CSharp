@@ -1,6 +1,6 @@
 namespace ConsoleApp1;
 
-public class Armor(string name, int armor, Perks? perk) : Protection
+public class Armor(string name, int armor, Perks? perk) : Protection(name, armor, perk)
 {
     private string _name = name;
     private int _armor = armor;
