@@ -122,4 +122,12 @@ public class Character {
             Console.WriteLine(item.ToString());
         }
     }
+
+
+
+    public void AddToInventory(IItem item)
+    {
+        _inventory.Add(item);
+    }
+    
 }

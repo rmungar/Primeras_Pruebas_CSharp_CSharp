@@ -5,7 +5,7 @@ namespace ConsoleApp1;
 public interface IItem
 {
     
-    public void Apply(Character character){}
+    
 
     
 //--------------------------------------------------------------------------------------------------------------------//

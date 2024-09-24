@@ -8,10 +8,10 @@
     Protection pr1 = new Shield("SH", 50, Perks.HEALING);
     Protection pr2 = new Shield("AR", 30, Perks.GUARD);
 
-    wp1.Apply(character);
-    wp2.Apply(character);
-    pr1.Apply(character);
-    pr2.Apply(character);
+    character.AddToInventory(wp1);
+    character.AddToInventory(wp2);
+    character.AddToInventory(pr1);
+    character.AddToInventory(pr2);
 
     Console.WriteLine(character.GetName() + " dealt " + character.Attack() + " damage " + "to an enemy.");
     Console.WriteLine(character.GetName() + " has " + character.Defense() + " points of armor.");

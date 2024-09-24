@@ -28,10 +28,6 @@ public abstract class Weapon : IItem
         return _perk ?? null;
     }
     
-    public void Apply(Character character)
-    {
-        character._inventory.Add(this);
-    }
     
     public override string ToString()
     {
