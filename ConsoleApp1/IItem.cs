@@ -26,5 +26,11 @@ public interface IItem
         return null;
     }
 
+
+    public bool GetMinion()
+    {
+        return false;
+    }
+
     
 }

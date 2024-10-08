@@ -2,11 +2,11 @@
 
     Character character = new Character("1");
 
-    Weapon wp1 = new Sword("EX", 40, Perks.TTA);
-    Weapon wp2 = new Axe("AX", 30, Perks.FIRE_EFFECT);
+    Weapon wp1 = new Sword("EX", 40, Perks.TTA, false);
+    Weapon wp2 = new Axe("AX", 30, Perks.FIRE_EFFECT, true);
 
-    Protection pr1 = new Shield("SH", 50, Perks.HEALING);
-    Protection pr2 = new Shield("AR", 30, Perks.GUARD);
+    Protection pr1 = new Shield("SH", 50, Perks.HEALING, true);
+    Protection pr2 = new Shield("AR", 30, Perks.GUARD, false);
 
     character.AddToInventory(wp1);
     character.AddToInventory(wp2);

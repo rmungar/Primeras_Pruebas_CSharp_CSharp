@@ -5,12 +5,14 @@ public abstract class Weapon : IItem
     private string _name;
     private int _damage;
     private Perks? _perk;
+    private bool _minion;
     
-    public Weapon(string name, int damage, Perks? perk)
+    public Weapon(string name, int damage, Perks? perk, bool minion)
     {
         _name = name;
         _damage = damage;
         _perk = perk;
+        _minion = minion;
     }
     
     public string GetName()
@@ -37,5 +39,11 @@ public abstract class Weapon : IItem
         }
         return GetName() + " - " + GetAmount() + " damage points" + " - " + "Perk: " + GetPerk();
         
+    }
+
+
+    public bool GetMinion()
+    {
+        return _minion;
     }
 }

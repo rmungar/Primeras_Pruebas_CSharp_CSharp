@@ -6,7 +6,10 @@ public class Character {
     private double _currentHp;
     private int _baseArmor;
     private int _baseDamage;
-    public List<IItem> _inventory = [];
+    private List<IItem> _inventory = [];
+    private List<Minion> _minions = [];
+    
+    
     
     public Character(string name, int maxHitPoints = 100, int baseArmor = 0, int baseDamage = 10)
     {   
@@ -45,6 +48,13 @@ public class Character {
         return _baseArmor; 
     }
 
+
+
+    public List<IItem> GetInventory()
+    {
+        return _inventory;
+    }
+    
 //--------------------------------------------------------------------------------------------------------------------//
 
 // Hace atacar al personaje, devuelve el ataque total de esste.
@@ -124,6 +134,20 @@ public class Character {
     }
 
 
+    public void SpawnMinions()
+    {
+        foreach (var item in _inventory)
+        {
+            if (item.GetMinion())
+            {
+                Minion minion = new Minion();
+                _minions.Add(minion);
+                Console.WriteLine("A minion has been spawned");
+            }  
+        }
+    }
+    
+    
 
     public void AddToInventory(IItem item)
     {

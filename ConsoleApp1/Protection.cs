@@ -5,12 +5,14 @@ public abstract class Protection : IItem
     private string _name;
     private int _armor;
     private Perks? _perk;
+    private bool _minion;
 
-    public Protection(string name, int armor, Perks? perk)
+    public Protection(string name, int armor, Perks? perk, bool minion)
     {
         _name = name;
         _armor = armor;
         _perk = perk;
+        _minion = minion;
     }
     
     public string GetName()
@@ -36,5 +38,11 @@ public abstract class Protection : IItem
             return GetName() + " - " + GetAmount() + " armor points" + " - " + "No Perk" ;
         }
         return GetName() + " - " + GetAmount() + " armor points" + " - " + "Perk: " + GetPerk();
+    }
+
+
+    public bool GetMinion()
+    {
+        return _minion;
     }
 }

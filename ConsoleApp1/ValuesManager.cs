@@ -10,7 +10,7 @@ public class ValuesManager
     {
         // Variable que contiene el valor del daño base del personaje antes de aplicar los modificadores.
         double characterTotalDamage = character.GetBaseDamage();
-        foreach (var item in character._inventory)
+        foreach (var item in character.GetInventory())
         {
            
             if (item is Weapon weapon)
@@ -43,7 +43,7 @@ public class ValuesManager
     {
         // Variable que contiene el valor del daño base del personaje antes de aplicar los modificadores.
         double characterTotalDefense = character.GetBaseArmor();
-        foreach (var item in character._inventory)
+        foreach (var item in character.GetInventory())
         {
             if (item is Protection protection)
             {
@@ -69,7 +69,7 @@ public class ValuesManager
     public static double GetTotalHealing(int baseHealing, Character character)
     {
         double characterTotalHealing = baseHealing;
-        foreach (var item in character._inventory)
+        foreach (var item in character.GetInventory())
         {
             if (item is Armor armor)
             {
