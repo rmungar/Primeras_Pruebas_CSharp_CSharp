@@ -19,6 +19,8 @@
     Console.WriteLine(character.GetName() + " has healed " + character.Heal(100) + " health points.");
 
     character.ShowInventory();
+    
+    character.SpawnMinions();
 
 
  

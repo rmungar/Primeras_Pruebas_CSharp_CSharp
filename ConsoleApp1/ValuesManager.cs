@@ -82,9 +82,4 @@ public class ValuesManager
         }
         return characterTotalHealing;
     }
-    
-    
-    
-    
-    
 }

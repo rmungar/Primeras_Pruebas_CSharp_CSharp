@@ -133,21 +133,45 @@ public class Character {
         }
     }
 
-
+    
+//--------------------------------------------------------------------------------------------------------------------//    
+    
+// Crea a los minions del usuario
+    
     public void SpawnMinions()
     {
+        int total = 0;
         foreach (var item in _inventory)
         {
             if (item.GetMinion())
             {
                 Minion minion = new Minion();
                 _minions.Add(minion);
-                Console.WriteLine("A minion has been spawned");
+                total += 1;
+                
             }  
+        }
+
+        if (total > 0)
+        {
+            if (total != 1)
+            {
+                Console.WriteLine(total + " minions have been spawned.");
+            }
+            else
+            {
+                Console.WriteLine(total + " minion has been spawned.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("No minions have been spawned.");
         }
     }
     
+//--------------------------------------------------------------------------------------------------------------------//    
     
+// Añade un item al inventario del personaje
 
     public void AddToInventory(IItem item)
     {

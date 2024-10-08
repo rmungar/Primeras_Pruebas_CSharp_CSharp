@@ -1,12 +1,7 @@
-using System.Runtime.InteropServices.JavaScript;
-
 namespace ConsoleApp1;
 
 public interface IItem
 {
-    
-    
-
     
 //--------------------------------------------------------------------------------------------------------------------//
 
@@ -26,7 +21,9 @@ public interface IItem
         return null;
     }
 
-
+//--------------------------------------------------------------------------------------------------------------------//
+    
+// Devuelve si un item puede crear un minion.
     public bool GetMinion()
     {
         return false;
