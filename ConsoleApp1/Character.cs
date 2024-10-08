@@ -1,3 +1,6 @@
+using ConsoleApp1.minion;
+using ConsoleApp1.various;
+
 namespace ConsoleApp1;
 
 public class Character {
@@ -7,7 +10,7 @@ public class Character {
     private int _baseArmor;
     private int _baseDamage;
     private List<IItem> _inventory = [];
-    private List<Minion> _minions = [];
+    private List<IPet> _minions = [];
     
     
     
@@ -55,6 +58,12 @@ public class Character {
         return _inventory;
     }
     
+    public List<IPet> GetMinions()
+    {
+        return _minions;
+    }
+
+    
 //--------------------------------------------------------------------------------------------------------------------//
 
 // Hace atacar al personaje, devuelve el ataque total de esste.
@@ -80,7 +89,7 @@ public class Character {
     public double Heal(int amount)
     {
         var toHeal = ValuesManager.GetTotalHealing(amount, this);
-        var healed = 0.0;
+        double healed;
         if (toHeal >= _maxHitPoints)
         {
             healed = _maxHitPoints - _currentHp;
@@ -145,8 +154,8 @@ public class Character {
         {
             if (item.GetMinion())
             {
-                Minion minion = new Minion();
-                _minions.Add(minion);
+                Soul soul = new Soul();
+                _minions.Add(soul);
                 total += 1;
                 
             }  
