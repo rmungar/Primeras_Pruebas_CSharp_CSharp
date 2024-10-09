@@ -1,3 +1,5 @@
+![Build Status](https://circleci.com/gh/rmungar/Primeras_Pruebas_CSharp_CSharp.png?circle-token=:circle-token)
+
 ## Primeras pruebas con C#
 ### Descripción:
   Este proyecto consta de varias ramas (2 actualmente), pero es susceptible a ser ampliado o modificado en un futuro.
