@@ -9,7 +9,7 @@
 -  La **segunda rama** consta de los archivos anteriores más los nuevos necesarios para la segunda actividad. La cual consistía de la creación de minions.
 
   
-· **SEGUNDA RAMA**
+**SEGUNDA RAMA**
 
   Diagrama de clases:
   ![image](https://github.com/user-attachments/assets/c090b562-5545-4f2b-8750-357258d1c9b9)
